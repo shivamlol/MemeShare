@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         loadMeme();
     }
 
-    protected void loadMeme(){
-        RequestQueue queue = Volley.newRequestQueue(this);
+    private void loadMeme(){
+        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         String url = "https://meme-api.herokuapp.com/gimme";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -42,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        ImageView imageView = findViewById(R.id.imageView);
-                        Glide.with(MainActivity.this).load(url).into(imageView);
+                        ImageView imageView = findViewById(R.id.imageViewId);
+                        //Glide.with(MainActivity.this).load(url).into(imageView);
+                        RequestManager manager = Glide.with(imageView);
+                        manager.load(url).into(imageView);
                     }
                     }, new Response.ErrorListener() {
                     @Override

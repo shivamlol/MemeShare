@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    
+    
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
@@ -16,6 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
+    
+    
     <Button
         android:id="@+id/ShareButton"
         android:layout_width="0dp"
@@ -28,6 +32,8 @@
         android:onClick="shareMeme"
         tools:ignore="UsingOnClickInXml" />
 
+    
+    
 
     <Button
         android:id="@+id/NextButton"
@@ -41,6 +47,8 @@
         android:onClick="nextMeme"
         tools:ignore="UsingOnClickInXml" />
 
+    
+    
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"

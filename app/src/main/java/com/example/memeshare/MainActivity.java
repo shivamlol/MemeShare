@@ -42,10 +42,8 @@ public class MainActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+                        ImageView imageView = findViewById(R.id.imageView);
                         Glide.with(MainActivity.this).load(url).into(imageView);
-
-
                     }
                     }, new Response.ErrorListener() {
                     @Override
